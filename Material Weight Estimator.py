@@ -1,4 +1,4 @@
-# Branch2: Change overhead to 15%
+# Branch3: Change overhead to 20%
 
 import os
 
@@ -49,17 +49,17 @@ if __name__ == "__main__":
 
     total_weight = calculate_total_weight(materials)
 
-    # Branch2 change: overhead = 15%
-    overhead = total_weight * 0.15
+    # Branch3 change: overhead = 20%
+    overhead = total_weight * 0.2
     
     final_weight = total_weight + overhead
 
     print("Total weight (kg):", total_weight)
-    print("Overhead (15%):", overhead)
+    print("Overhead (20%):", overhead)
     print("Final weight with overhead:", final_weight)
 
     # Write output file
     with open("report.txt", "w") as out:
         out.write(f"Total weight: {total_weight} kg\n")
-        out.write(f"Overhead (15%): {overhead} kg\n")
+        out.write(f"Overhead (20%): {overhead} kg\n")
         out.write(f"Final weight: {final_weight} kg\n")
