@@ -1,6 +1,12 @@
-# Commit 1: Read material weights and quantities from file
+# Commit 3: Add error handling (empty file, invalid data, missing file)
+
+import os
 
 def read_materials(filename):
+    if not os.path.exists(filename):
+        print(f"Error: Input file '{filename}' does not exist.")
+        return []
+
     materials = []
     with open(filename, "r") as file:
         for line in file:
@@ -8,6 +14,24 @@ def read_materials(filename):
             if clean:
                 name, weight, qty = clean.split()
                 materials.append((name, float(weight), int(qty)))
+                continue
+
+            parts = clean.split()
+            if len(parts) != 3:
+                print(f"Warning: Skipping invalid line: {line.strip()}")
+                continue
+
+            name, weight, qty = parts
+
+            try:
+                weight = float(weight)
+                qty = int(qty)
+            except ValueError:
+                print(f"Warning: Invalid number format in line: {line.strip()}")
+                continue
+
+            materials.append((name, weight, qty))
+    
     return materials
 
 
@@ -20,6 +44,10 @@ def calculate_total_weight(materials):
 
 if __name__ == "__main__":
     materials = read_materials("materials.txt")
+
+    if not materials:
+        print("Error: No valid material data found. Exiting.")
+        exit()
 
     total_weight = calculate_total_weight(materials)
     overhead = total_weight * 0.10
