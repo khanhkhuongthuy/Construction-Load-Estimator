@@ -1,0 +1,11 @@
+# MaterialName   WeightPerItem(kg)   Quantity
+ConcreteBlock 12 50
+SteelRod 5 120
+WoodPlank 3 40
+CementBag 25 20
+GlassPanel 8 15
+Brick 2 300
+InsulationRoll 4 18
+TileBox 22 10
+PaintBucket 6 12
+DrywallSheet 9 25

@@ -50,7 +50,7 @@ if __name__ == "__main__":
         exit()
 
     total_weight = calculate_total_weight(materials)
-    overhead = total_weight * 0.10
+    overhead = total_weight * 0.15
     final_weight = total_weight + overhead
 
     print("Total weight (kg):", total_weight)
