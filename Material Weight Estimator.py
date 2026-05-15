@@ -55,11 +55,11 @@ if __name__ == "__main__":
     final_weight = total_weight + overhead
 
     print("Total weight (kg):", total_weight)
-    print("Overhead (15%):", overhead)
+    print("Overhead (20%):", overhead)
     print("Final weight with overhead:", final_weight)
 
     # Write output file
     with open("report.txt", "w") as out:
         out.write(f"Total weight: {total_weight} kg\n")
-        out.write(f"Overhead (15%): {overhead} kg\n")
+        out.write(f"Overhead (20%): {overhead} kg\n")
         out.write(f"Final weight: {final_weight} kg\n")
