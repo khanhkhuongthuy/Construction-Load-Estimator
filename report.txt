@@ -1,3 +1,0 @@
-Total weight: 3129.0 kg
-Overhead (10%): 312.90000000000003 kg
-Final weight: 3441.9 kg
