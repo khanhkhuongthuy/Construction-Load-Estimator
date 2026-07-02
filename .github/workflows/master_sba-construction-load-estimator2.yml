@@ -68,7 +68,6 @@ jobs:
       - name: Unzip artifact for deployment
         run: |
           unzip release.zip
-          rm release.zip
         
       - name: Login to Azure
         uses: azure/login@v2
@@ -83,5 +82,5 @@ jobs:
         with:
           app-name: 'SBA-Construction-Load-Estimator2'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: ./release.zip
           
