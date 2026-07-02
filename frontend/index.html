@@ -13,3 +13,10 @@
     </form>
 </body>
 </html>
+<script>
+    fetch("https://sba-construction-load-estimator2.azurewebsites.net/api/ConstructionLoad")
+        .then(r => r.text())
+        .then(d => console.log("Backend response:", d))
+        .catch(e => console.error(e));
+</script>
+
