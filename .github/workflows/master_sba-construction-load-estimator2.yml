@@ -4,7 +4,7 @@
 
 name: Build and deploy Python project to Azure Function App - SBA-Construction-Load-Estimator2
 
-on:
+on: 
   push:
     branches:
       - master
